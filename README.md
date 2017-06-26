@@ -24,4 +24,8 @@ npm run e2e
 npm test
 ```
 
+## branch 分支说明
+- first-version 最原始版，未进行组件封装 【2017-06-26】
+
 For detailed explanation on how things work, checkout the [guide](http://vuejs-templates.github.io/webpack/) and [docs for vue-loader](http://vuejs.github.io/vue-loader).
+

@@ -2,13 +2,34 @@
 // (runtime-only or standalone) has been set in webpack.base.conf with an alias.
 import Vue from 'vue';
 import App from './App';
+import goods from 'components/goods/goods';
+import ratings from 'components/ratings/ratings';
+import seller from 'components/seller/seller';
 
-// Vue.config.productionTip = false
+import 'common/stylus/index.styl';
 
-// eslint-disable no-new 跳过规则校验，不需要将实例化赋值给一个变量
-/* eslint-disable no-new */
-new Vue({
-  el: 'body',
-  template: '<App/>',
-  components: { App }
+// 引入路由
+import VueRouter from 'vue-router';
+
+Vue.use(VueRouter);
+
+let app = Vue.extend(App);
+
+let router = new VueRouter({
+  linkActiveClass: 'active'
 });
+
+router.map({
+  '/goods': {
+    component: goods
+  },
+  '/ratings': {
+    component: ratings
+  },
+  '/seller': {
+    component: seller
+  }
+
+});
+
+router.start(app, '#app');
